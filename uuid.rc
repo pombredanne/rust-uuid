@@ -1,0 +1,10 @@
+#[link(name = "uuid",
+       vers = "0.0.1",
+       uuid = "39c13331-9c91-4f6c-a4d5-09d82bbdcf77")];
+     
+#[crate_type = "lib"]; 
+
+extern mod std;
+
+use from_str::FromStr;
+use to_str::ToStr;
