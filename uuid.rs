@@ -33,17 +33,39 @@ pub mod uuid {
 
     }
 
+    impl UUID : cmp::Eq {
+
+        pure fn eq(other: &UUID) -> bool {
+            let UUID(sw1, sw2, sw3, sw4) = self;
+            let UUID(ow1, ow2, ow3, ow4) = *other;
+
+            sw1 == ow1 && 
+            sw2 == ow2 && 
+            sw3 == ow3 && 
+            sw4 == ow4
+        }
+
+        pure fn ne(other: &UUID) -> bool {
+            !self.eq(other)
+        }
+
+    }
+
 }
-
-
 
 #[cfg(test)]
 mod test {
 
     #[test]
-    fn test() {
+    fn gen_test() {
+        uuid::random();
+    }
+
+    #[test]
+    fn eq_test() {
         let id = uuid::random();
-        io::println(id.to_str());
+        assert id == id;
+        assert id != uuid::random();
     }
 
 }

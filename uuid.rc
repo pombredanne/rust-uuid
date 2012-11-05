@@ -1,7 +1,6 @@
 #[link(name = "uuid",
        vers = "0.0.1",
-       uuid = "39c13331-9c91-4f6c-a4d5-09d82bbdcf77")];
-     
+       uuid = "15b12afb-0ff7-446a-90a3-b12ef664b92b")];
 #[crate_type = "lib"]; 
 
 extern mod std;
